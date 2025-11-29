@@ -1,0 +1,17 @@
+# Backend
+backend/target/
+backend/.idea/
+backend/*.log
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker volumes
+postgres-data

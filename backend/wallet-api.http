@@ -1,0 +1,37 @@
+### 1) Vytvoření peněženky
+POST http://localhost:8080/api/wallets
+Content-Type: application/json
+
+{
+  "name": "Test wallet"
+}
+
+### 2) Zůstatky peněženky (po vytvoření)
+GET http://localhost:8080/api/wallets/1/balances
+
+### 3) Nabití peněženky (CZK)
+POST http://localhost:8080/api/wallets/1/deposit
+Content-Type: application/json
+
+{
+  "currency": "CZK",
+  "amount": 1000,
+  "description": "Initial top up"
+}
+
+### 4) Výběr části prostředků (CZK)
+POST http://localhost:8080/api/wallets/1/withdraw
+Content-Type: application/json
+
+{
+  "currency": "CZK",
+  "amount": 200,
+  "targetAccount": "CZ123456789/0100",
+  "description": "Test withdrawal"
+}
+
+### 5) Zůstatky po operacích
+GET http://localhost:8080/api/wallets/1/balances
+
+### 6) Historie transakcí
+GET http://localhost:8080/api/wallets/1/transactions
